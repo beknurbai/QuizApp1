@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="title_main_fr_toolbar">Quiz</string>
+    <string name="questions_amount_main_fr">Questions amount:</string>
+    <string name="number_qst_amount">10</string>
+    <string name="main_fr_difficulty_text">Difficulty</string>
+    <string name="main_fr_text_category">Category</string>
+    <string name="main_fr_btn_start">Start</string>
+</resources>

@@ -11,6 +11,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.quizapp.adapters.MainAdapterPager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -65,6 +66,34 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("Quiz");
             getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.background_white));
         }
+        mainPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                if (getSupportActionBar() != null) {
+                    switch (position) {
+                        case 0:
+                            getSupportActionBar().setTitle("Quiz");
+                            break;
+                        case 1:
+                            getSupportActionBar().setTitle("History");
+                            break;
+                        case 2:
+                            getSupportActionBar().setTitle("Settings");
+                            break;
+                    }
 
+                }
+            }
+        });
     }
+
+
 }
+
+
+
+
+
+
+

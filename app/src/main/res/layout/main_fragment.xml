@@ -20,6 +20,7 @@
     <LinearLayout
         android:id="@+id/linear_text_amount"
         style="@style/main_fr_text_linear"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/image_main_fragment">
@@ -39,7 +40,40 @@
             android:text="@string/number_qst_amount"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/normal_text" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/button_main_start">
+
+        <LinearLayout
+            android:id="@+id/btn_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/main_fr_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_for_button"
+                android:src="@drawable/ic_plus" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/main_fr_minus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_for_button"
+                android:src="@drawable/ic_minus" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -56,9 +90,9 @@
             android:id="@+id/amount_seek_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:max="50"
             android:progressBackgroundTint="@color/OtherGrayishViolet"
             android:progressTint="@color/BrightViolet"
-            android:max="50"
             android:thumbTint="@color/BrightViolet"
             app:haloRadius="15dp"
             app:labelBehavior="gone" />

@@ -6,4 +6,21 @@
     <string name="main_fr_difficulty_text">Difficulty</string>
     <string name="main_fr_text_category">Category</string>
     <string name="main_fr_btn_start">Start</string>
+    <string name="history_def_category">Category</string>
+    <string name="navigation">Geography</string>
+    <string name="history_def_mixed">Mixed</string>
+    <string name="history_def_correct_answers">Correct answers:</string>
+    <string name="history_def_correct_answer">Correct answer:</string>
+    <string name="def_amount">8/10</string>
+    <string name="def_text_difficulty">Difficulty</string>
+    <string name="def_easy">Easy</string>
+    <string name="yes">Yes</string>
+    <string name="no">no</string>
+    <string name="btn_text_skip">skip</string>
+    <string-array name="spinner_category_example">
+        <item>Any type</item>
+        <item>easy</item>
+        <item>medium</item>
+        <item>hard</item>
+    </string-array>
 </resources>

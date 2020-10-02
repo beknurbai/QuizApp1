@@ -9,8 +9,9 @@ import com.example.quizapp.ui.fragments.history.HistoryFragment;
 import com.example.quizapp.ui.fragments.main.MainFragment;
 import com.example.quizapp.ui.fragments.settings.SettingsFragment;
 
-public class MainAdapterPager extends FragmentPagerAdapter {
+    public class MainAdapterPager extends FragmentPagerAdapter {
     public MainAdapterPager(@NonNull FragmentManager fm) {
+
         super(fm);
     }
 

@@ -18,7 +18,7 @@ import static com.example.quizapp.utilits.Config.RESULT_QUIZ_KEY;
 public class ResultActivity extends AppCompatActivity {
     private ResultQuiz resultQuiz;
     private ActivityResultBinding binding;
-    TextView dif, correct, result;
+    TextView dif, correct, result,category;
 
 
     @Override
@@ -39,6 +39,7 @@ public class ResultActivity extends AppCompatActivity {
         dif.setText(resultQuiz.getDifficulty());
         correct.setText(resultQuiz.getCorrectAns());
         result.setText(resultQuiz.getResultPercentage());
+        category.setText(resultQuiz.getCategory());
         Log.e("jjjj", "getArg: " + resultQuiz.getResultPercentage());
     }
 
@@ -49,5 +50,6 @@ public class ResultActivity extends AppCompatActivity {
         dif=findViewById(R.id.result_text_view_difficulty);
         correct=findViewById(R.id.result_text_view_correct_ans);
         result=findViewById(R.id.result_text_view_result);
+        category=findViewById(R.id.result_text_view_category);
     }
 }

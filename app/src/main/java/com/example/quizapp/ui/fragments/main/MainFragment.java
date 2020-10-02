@@ -63,7 +63,6 @@ public class MainFragment extends Fragment {
     }
 
     private void setListener() {
-
         binding.buttonMainStart.setOnClickListener(v -> {
             Intent intent = new Intent(requireActivity(), QuestionActivity.class);
             intent.putExtra(RESULT_QUESTIONS_AMOUNT_KEY, mViewModel.progressBarSuccess.getValue());
@@ -116,7 +115,7 @@ public class MainFragment extends Fragment {
         mViewModel.triviaCategories.observeForever(triviaCategories -> {
             List<TriviaCategory> categoryList = triviaCategories.getTriviaCategories();
             TriviaCategory defCategory = new TriviaCategory();
-            defCategory.setName("Any category");
+            defCategory.setName(getString(R.string.def_value_for_cat_spinner));
             defCategory.setId(99);
             categoryList.add(0, defCategory);
             List<String> name_category = new ArrayList<>();

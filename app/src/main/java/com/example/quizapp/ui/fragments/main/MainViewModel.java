@@ -18,19 +18,6 @@ public class MainViewModel extends ViewModel implements QuizApiCallBack.Categori
         Repository.getCategory(this);
     }
 
-    public void buttonPlusCLicked() {
-        if (progressBarSuccess.getValue() == null) {
-            progressBarSuccess.setValue(10);
-        }
-        progressBarSuccess.setValue(progressBarSuccess.getValue() + 1);
-    }
-
-    public void buttonMinusCLicked() {
-        if (progressBarSuccess.getValue() == null) {
-            progressBarSuccess.setValue(10);
-        }
-        progressBarSuccess.setValue(progressBarSuccess.getValue() - 1);
-    }
 
     @Override
     public void onSuccess(TriviaCategories categories) {

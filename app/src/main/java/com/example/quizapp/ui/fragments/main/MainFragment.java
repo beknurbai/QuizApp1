@@ -62,6 +62,11 @@ public class MainFragment extends Fragment {
         mViewModel.updateCategory();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
     private void setListener() {
         binding.buttonMainStart.setOnClickListener(v -> {
             Intent intent = new Intent(requireActivity(), QuestionActivity.class);
@@ -104,7 +109,7 @@ public class MainFragment extends Fragment {
 
     private void seekBarInitialisation() {
         binding.amountSeekBar.setMax(20);
-        binding.amountSeekBar.setProgress(10);
+        binding.amountSeekBar.setProgress(0);
     }
 
     private void observeForever() {
@@ -117,7 +122,7 @@ public class MainFragment extends Fragment {
             TriviaCategory defCategory = new TriviaCategory();
             defCategory.setName(getString(R.string.def_value_for_cat_spinner));
             defCategory.setId(99);
-            categoryList.add(0, defCategory);
+            categoryList.add(10, defCategory);
             List<String> name_category = new ArrayList<>();
             for (TriviaCategory triviaCategory : categoryList)
                 name_category.add(triviaCategory.getName());

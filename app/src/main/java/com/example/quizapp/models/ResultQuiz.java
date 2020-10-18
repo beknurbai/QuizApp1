@@ -1,5 +1,9 @@
 package com.example.quizapp.models;
 
+import androidx.room.TypeConverters;
+
+import com.example.quizapp.data.local.converters.QuestionConverter;
+
 import java.io.Serializable;
 
 public class ResultQuiz implements Serializable {
@@ -8,13 +12,20 @@ public class ResultQuiz implements Serializable {
     private String difficulty;
     private String correctAns;
     private String resultPercentage = "start";
+    @TypeConverters({QuestionConverter.class})
+    private Answers answers;
 
-    public ResultQuiz(boolean isWin, String category, String difficulty, String correctAns, String resultPercentage) {
+    public ResultQuiz(boolean isWin, String category, String difficulty, String correctAns, String resultPercentage, Answers answers) {
         this.isWin = isWin;
         this.category = category;
         this.difficulty = difficulty;
         this.correctAns = correctAns;
         this.resultPercentage = resultPercentage;
+        this.answers = answers;
+    }
+
+    public Answers getAnswers() {
+        return answers;
     }
 
     public boolean isWin() {

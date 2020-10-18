@@ -1,17 +1,17 @@
 package com.example.quizapp.ui.activities.question;
 
 
-import android.util.Log;
-
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.quizapp.data.network.QuizApiCallBack;
 import com.example.quizapp.data.network.Repository;
+import com.example.quizapp.models.Answers;
 import com.example.quizapp.models.QuestionModel;
 import com.example.quizapp.models.QuizResponse;
 import com.example.quizapp.models.ResultQuiz;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionViewModel extends ViewModel implements QuizApiCallBack.Questions {
@@ -19,6 +19,7 @@ public class QuestionViewModel extends ViewModel implements QuizApiCallBack.Ques
     MutableLiveData<ResultQuiz> result = new MutableLiveData<>();
     private int correctAnswerAmount = 0;
     private int wrongAnswerAmount = 0;
+    private List<String> list=new ArrayList<>();
 
     public void setAmountQuestions(int questionsAmount, int category, String difficulty) {
         if (category == 99 && difficulty.equals("Any type")) {
@@ -46,7 +47,7 @@ public class QuestionViewModel extends ViewModel implements QuizApiCallBack.Ques
                 category,
                 difficulty,
                 correctAnswerAmount + "/" + (correctAnswerAmount + wrongAnswerAmount),
-                resPr + "%"
+                resPr + "%", new Answers(list)
         ));
 
     }

@@ -8,5 +8,6 @@
     <color name="colorTitle">#1F2041</color>
     <color name="colorDesc">#801F2041</color>
     <color name="BrightViolet">#BE52F2</color>
+    <color name="BrightRed">#E9FF3737</color>
     <color name="OtherGrayishViolet">#ECEBED</color>
 </resources>

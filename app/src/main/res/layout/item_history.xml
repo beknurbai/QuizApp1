@@ -53,12 +53,13 @@
 
                 <TextView
                     android:id="@+id/text_view_correct_ans"
-                    style="@style/history_style_for_desc"
+                    android:layout_marginStart="@dimen/margin_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/def_amount"
                     app:layout_constraintStart_toEndOf="@id/correct_ans"
-                    app:layout_constraintTop_toTopOf="@id/correct_ans" />
+                    app:layout_constraintTop_toTopOf="@id/correct_ans"
+                    android:layout_marginLeft="@dimen/margin_vertical" />
 
 
                 <TextView
@@ -73,12 +74,13 @@
 
                 <TextView
                     android:id="@+id/text_view_difficulty"
-                    style="@style/history_style_for_desc"
                     android:layout_width="wrap_content"
+                    android:layout_marginStart="@dimen/margin_vertical"
                     android:layout_height="wrap_content"
                     android:text="@string/def_easy"
                     app:layout_constraintStart_toEndOf="@id/difficulty"
-                    app:layout_constraintTop_toTopOf="@id/difficulty" />
+                    app:layout_constraintTop_toTopOf="@id/difficulty"
+                    android:layout_marginLeft="@dimen/margin_vertical" />
 
                 <View
                     android:id="@+id/pop_up_menu"

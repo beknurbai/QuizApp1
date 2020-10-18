@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margin_horizontal">64dp</dimen>
+    <dimen name="margin_horizontal_small">16dp</dimen>
     <dimen name="normal_text">16sp</dimen>
     <dimen name="margin_vertical">16dp</dimen>
     <dimen name="margin_for_button">12dp</dimen>

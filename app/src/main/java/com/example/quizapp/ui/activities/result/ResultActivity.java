@@ -1,14 +1,16 @@
 package com.example.quizapp.ui.activities.result;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProviders;
+
+import com.example.quizapp.App;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.ActivityResultBinding;
 import com.example.quizapp.models.ResultQuiz;
@@ -18,6 +20,7 @@ import static com.example.quizapp.utilits.Config.RESULT_QUIZ_KEY;
 public class ResultActivity extends AppCompatActivity {
     private ResultQuiz resultQuiz;
     private ActivityResultBinding binding;
+    private ResultViewModel viewModel;
     TextView dif, correct, result,category;
 
 
@@ -40,16 +43,19 @@ public class ResultActivity extends AppCompatActivity {
         correct.setText(resultQuiz.getCorrectAns());
         result.setText(resultQuiz.getResultPercentage());
         category.setText(resultQuiz.getCategory());
+        viewModel.getResult(resultQuiz);
         Log.e("jjjj", "getArg: " + resultQuiz.getResultPercentage());
     }
 
     public void onBtnClickFinish(View view) {
         finish();
     }
-    public void init(){
-        dif=findViewById(R.id.result_text_view_difficulty);
-        correct=findViewById(R.id.result_text_view_correct_ans);
-        result=findViewById(R.id.result_text_view_result);
-        category=findViewById(R.id.result_text_view_category);
+
+    public void init() {
+        viewModel = ViewModelProviders.of(this).get(ResultViewModel.class);
+        dif = findViewById(R.id.result_text_view_difficulty);
+        correct = findViewById(R.id.result_text_view_correct_ans);
+        result = findViewById(R.id.result_text_view_result);
+        category = findViewById(R.id.result_text_view_category);
     }
 }

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 
+import com.example.quizapp.App;
 import com.example.quizapp.R;
 import com.example.quizapp.adapters.QuizAdapter;
 import com.example.quizapp.databinding.ActivityQuestionBinding;
@@ -41,13 +42,19 @@ public class QuestionActivity extends AppCompatActivity implements OnResultAnswe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.Theme_AppCompat_Light_NoActionBar);
+        setTheme(App.getInstance().getPreferences().getTheme());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
         init();
         setArg();
         observeForever();
         setListener();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        this.setTheme(App.getInstance().getPreferences().getTheme());
     }
 
     private void setListener() {

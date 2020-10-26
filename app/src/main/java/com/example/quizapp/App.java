@@ -6,11 +6,15 @@ import androidx.room.Room;
 
 import com.example.quizapp.data.local.HistoryResDataBase;
 import com.example.quizapp.data.network.RetrofitBuilder;
+import com.example.quizapp.utilits.Preferences;
 
 public class App extends Application {
     private static App instance;
     private RetrofitBuilder service;
     public HistoryResDataBase dataBase;
+
+
+    private Preferences preferences;
 
     @Override
     public void onCreate() {
@@ -22,6 +26,7 @@ public class App extends Application {
                 .build();
         instance = this;
         service = new RetrofitBuilder();
+        preferences = new Preferences(instance);
     }
 
     public static App getInstance() {
@@ -31,4 +36,10 @@ public class App extends Application {
     public RetrofitBuilder getService() {
         return service;
     }
+
+    public Preferences getPreferences() {
+        return preferences;
+    }
+
+
 }

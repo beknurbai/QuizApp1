@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="custom_primary" format="color" />
+    <attr name="custom_primary_dark" format="color" />
+    <attr name="custom_accent" format="color" />
+    <attr name="custom_text_color" format="color" />
+    <attr name="custom_background_color" format="color" />
+
+
+</resources>

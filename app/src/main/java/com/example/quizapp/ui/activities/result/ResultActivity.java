@@ -26,13 +26,19 @@ public class ResultActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.Theme_AppCompat_Light_NoActionBar);
+        setTheme(App.getInstance().getPreferences().getTheme());
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_result);
         setContentView(R.layout.activity_result);
         Log.e("ololo", "ResultActivity: onCreate: ");
         init();
         if (getIntent() != null) getArg(getIntent());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        this.setTheme(App.getInstance().getPreferences().getTheme());
     }
 
     private void getArg(Intent data) {

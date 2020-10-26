@@ -19,6 +19,7 @@
     <string name="btn_text_skip">skip</string>
     <string name="def_value_for_cat_spinner">Any category</string>
     <string name="settings_delete">Delete</string>
+    <string name="text_theme">Theme</string>
     <string-array name="spinner_category_example">
         <item>Any type</item>
         <item>easy</item>

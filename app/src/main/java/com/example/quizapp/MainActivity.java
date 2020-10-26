@@ -1,17 +1,13 @@
 package com.example.quizapp;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.viewpager.widget.ViewPager;
-
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.quizapp.adapters.MainAdapterPager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -25,14 +21,19 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.AppTheme);
+        setTheme(App.getInstance().getPreferences().getTheme(R.style.AppTheme));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();//method for initialization
-
         createBtnNavViewWithViewPager();
+        getSupportActionBar().hide();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        this.setTheme(App.getInstance().getPreferences().getTheme());
+    }
 
     private void init() {
         adapterPager = new MainAdapterPager(getSupportFragmentManager());
